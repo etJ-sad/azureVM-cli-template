@@ -8,7 +8,7 @@ $vmname = Read-Host -Prompt "VM name"
 New-AzResourceGroup -Name $resourceGroupName -Location "$location"
 New-AzResourceGroupDeployment `
     -ResourceGroupName $resourceGroupName `
-    -TemplateUri "https://1drv.ms/u/s!AmiqcdBzVagzleUNe30RvF9Cqp-5KA?e=loxeLO" `
+    -TemplateUri "https://raw.githubusercontent.com/etJ-sad/dinah-vm/master/VM-Template.json" `
     -adminUsername $adminUsername `
     -adminPassword $adminPassword `
     -dnsLabelPrefix $dnsLabelPrefix

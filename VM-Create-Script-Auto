@@ -4,7 +4,7 @@ $adminUsername = "dinah"
 $adminPassword = "st4285019336453"
 $dnsLabelPrefix = Read-Host -Prompt "Enter an unique DNS name for the public IP"
 $vmName = Read-Host -Prompt "Enter an unique name for the Virtual Machine"
-$nicName = Read-Host -Prompt "Enter an unique nic name for the Virtual Machine"
+$publicIP = Read-Host -Prompt "Enter an unique IP name for the Virtual Machine"
 
 New-AzResourceGroup -Name $resourceGroupName -Location "$location"
 New-AzResourceGroupDeployment `
@@ -14,6 +14,6 @@ New-AzResourceGroupDeployment `
     -adminPassword $adminPassword `
     -dnsLabelPrefix $dnsLabelPrefix `
     -vmName $vmName `
-    -nicName $nicName
+    -publicIP $publicIP
 
  (Get-AzVm -ResourceGroupName $resourceGroupName).name

@@ -26,10 +26,10 @@
         "description": "Name for the Virtual Machine."
       }
     },
-    "nicName": {
+    "publicIP": {
       "type": "string",
       "metadata": {
-        "description": "Nic name for the Virtual Machine."
+        "description": "Public IP for the Virtual Machine."
       }
     },
     "windowsOSVersion": {
@@ -69,7 +69,7 @@
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
-    "publicIPAddressName": "myPublicIP",
+    "publicIPAddressName": "[parameters('publicIP')]",
     "vmName": "[parameters('vmName')]",
     "virtualNetworkName": "MyVNET",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",

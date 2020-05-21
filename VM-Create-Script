@@ -12,8 +12,8 @@ New-AzResourceGroupDeployment `
     -TemplateUri "https://raw.githubusercontent.com/etJ-sad/dinah-vm/master/VM-Template.json" `
     -adminUsername $adminUsername `
     -adminPassword $adminPassword `
-    -dnsLabelPrefix $dnsLabelPrefix
-    -vmName $vmName
+    -dnsLabelPrefix $dnsLabelPrefix `
+    -vmName $vmName `
     -nicName $nicName
 
  (Get-AzVm -ResourceGroupName $resourceGroupName).name

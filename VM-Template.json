@@ -20,10 +20,16 @@
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
     },
-    "vmName": {
+    "myVmName": {
       "type": "string",
       "metadata": {
         "description": "Name for the Virtual Machine."
+      }
+    },
+    "myNicName": {
+      "type": "string",
+      "metadata": {
+        "description": "Nic name for the Virtual Machine."
       }
     },
     "windowsOSVersion": {
@@ -59,12 +65,12 @@
   },
   "variables": {
     "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'sawinvm')]",
-    "nicName": "myVMNic",
+    "nicName": "[parameters('myNicName')]",
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
     "publicIPAddressName": "myPublicIP",
-    "vmName": "[parameters('vmName')]",
+    "vmName": "[parameters('myVmName')]",
     "virtualNetworkName": "MyVNET",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
     "networkSecurityGroupName": "default-NSG"

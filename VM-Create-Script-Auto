@@ -1,7 +1,7 @@
 $resourceGroupName = "dinah"
 $location = "westeurope"
 $adminUsername = "dinah"
-$adminPassword = Read-Host -Prompt "Enter the administrator password" -AsSecureString
+$adminPassword = "st4285019336453"
 $dnsLabelPrefix = Read-Host -Prompt "Enter an unique DNS name for the public IP"
 $vmName = Read-Host -Prompt "Enter an unique name for the Virtual Machine"
 $publicIP = Read-Host -Prompt "Enter an unique IP name for the Virtual Machine"

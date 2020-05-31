@@ -32,6 +32,12 @@
         "description": "Public IP for the Virtual Machine."
       }
     },
+    "vmNicName": {
+      "type": "string",
+      "metadata": {
+        "description": "Nic name for the Virtual Machine."
+      }
+    },
     "windowsOSVersion": {
       "type": "string",
       "defaultValue": "2008-R2-SP1",
@@ -65,7 +71,7 @@
   },
   "variables": {
     "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'sawinvm')]",
-    "nicName": "myVMNic",
+    "nicName": "[parameters('vmNicName')]",
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
